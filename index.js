@@ -5,7 +5,11 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
 app.get("/", (req, res) => {
-    res.send("Bem vindo ao meu site")
+    res.render("index")
+})
+
+app.get("perguntar", (res, req) => {
+    res.render("perguntar")
 })
 
 app.listen(8000, () => { console.log("Programa rodando!") })
