@@ -8,7 +8,7 @@ app.get("/", (req, res) => {
     res.render("index")
 })
 
-app.get("perguntar", (res, req) => {
+app.get("/perguntar", (req, res) => {
     res.render("perguntar")
 })
 
