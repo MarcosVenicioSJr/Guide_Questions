@@ -1,6 +1,10 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
+const connection = require('./database/database')
+//Database
+
+
 
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
