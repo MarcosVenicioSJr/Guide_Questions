@@ -24,7 +24,6 @@ app.get("/", (req, res) => {
 app.post("/salvarpergunta", (req, res) => {
     const titulo = req.body.titulo
     const descricao = req.body.descricao
-    res.send("Fomulário recebido")
     perguntaModel.create({
         titulo: titulo,
         descricao: descricao
