@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const connection = require('./database/database')
+const perguntaModel = require('./database/Pergunta')
 
 //Database
 connection
@@ -24,6 +25,12 @@ app.post("/salvarpergunta", (req, res) => {
     const titulo = req.body.titulo
     const descricao = req.body.descricao
     res.send("Fomulário recebido")
+    perguntaModel.create({
+        titulo: titulo,
+        descricao: descricao
+    }).then(() => {
+        res.redirect("/")
+    })
 })
 
 app.listen(8000, () => { console.log("Programa rodando!") })

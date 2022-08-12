@@ -12,4 +12,8 @@ const Pergunta = connection.define('pergunta', {
     }
 })
 
-Pergunta.sync({ force: false }) //sincronizar com o banco, e criar a tabela caso n exista.
+Pergunta.sync({ force: false }).then(() => {
+    console.log('tabela criada')
+})
+
+module.exports = Pergunta
