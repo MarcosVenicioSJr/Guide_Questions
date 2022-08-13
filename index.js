@@ -18,6 +18,9 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.get("/", (req, res) => {
+    perguntaModel.findAll().then(perguntas => {
+        console.log(perguntas)
+    })
     res.render("index")
 })
 
