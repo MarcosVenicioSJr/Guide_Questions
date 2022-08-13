@@ -18,7 +18,11 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.get("/", (req, res) => {
-    perguntaModel.findAll({ raw: true }).then(perguntas => {
+    perguntaModel.findAll({
+        raw: true, order: [
+            ['id', 'DESC'] // muda a ordem que as perguntas aparecem. ASC(crescente), DESC(decrescente)
+        ]
+    }).then(perguntas => {
         res.render("index", {
             perguntas: perguntas
         })
