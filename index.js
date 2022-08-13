@@ -21,6 +21,10 @@ app.get("/", (req, res) => {
     res.render("index")
 })
 
+app.get('/perguntar', (req, res) => {
+    res.render('perguntar')
+})
+
 app.post("/salvarpergunta", (req, res) => {
     const titulo = req.body.titulo
     const descricao = req.body.descricao
